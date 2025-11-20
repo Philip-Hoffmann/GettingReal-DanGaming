@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingReal_DanGaming"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="DanGaming" Height="400" Width="600">
 
+    <Grid>
+        <Viewbox 
+            Stretch="Uniform" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="5,5,0,20" 
+            MaxHeight="40" 
+            MaxWidth="200">
+            <Image Source="/Images/DangamingLogo.png"/>
+        </Viewbox>
     </Grid>
+
+
 </Window>
+   
+
