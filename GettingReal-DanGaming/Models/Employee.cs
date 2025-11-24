@@ -35,7 +35,7 @@ namespace GettingReal_DanGaming.Models
             return $"Employee ID: {_id}, Pincode: {_pincode}, Date: {date:dd-MM-yyyy}";
         }
 
-        fsfdfsfdfs 
+        
 
     }
 
