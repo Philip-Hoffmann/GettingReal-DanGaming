@@ -17,6 +17,12 @@
             MaxWidth="200">
             <Image Source="/Images/DangamingLogo.png" Height="300" Width="1800"/>
         </Viewbox>
+        <ListBox x:Name="WarehouseListBox" Width="580" Height="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5,5,5,10"/>
+        <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" Text="🔍 Søg efter produkt" VerticalAlignment="Top" Width="200" Height="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Produkt Oversigt" VerticalAlignment="Top"/>
+        <Button x:Name="AddProductButton" Content="Tilføj nyt produkt" HorizontalAlignment="Left" Margin="220,80,0,0" VerticalAlignment="Top" Height="20" IsEnabled="false"/>
+        <Rectangle Height="1" Fill="Black" Margin="0,0,0,295" HorizontalAlignment="Stretch"/>
+        <Button Content="Login" Margin="530,10,20,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
     </Grid>
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GettingReal_DanGaming.Models
 {
-    public class Products
+    public class Product
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -20,6 +20,21 @@ namespace GettingReal_DanGaming.Models
         {
             get { return _dateOfReceipt; }
             set { _dateOfReceipt = value; }
+        }
+
+        public int addQuantity(Product product)
+        {
+
+        }
+
+        public int removeQuantity(Product product)
+        {
+
+        }
+
+        public void editProduct(Product product)
+        {
+
         }
 
     }
