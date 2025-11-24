@@ -12,8 +12,8 @@ namespace GettingReal_DanGaming.Models
         public string Description { get; set; }
         public string Brand { get; set; }
         public double Price { get; set; }
-        public integer Quantity { get; set; }
-        public integer MinimumQuantity { get; set; }
+        public int Quantity { get; set; }
+        public int MinimumQuantity { get; set; }
         private string _dateOfReceipt;
 
         public string DateOfRecipt
