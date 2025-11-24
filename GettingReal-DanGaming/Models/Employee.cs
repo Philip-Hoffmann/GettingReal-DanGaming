@@ -29,11 +29,18 @@ namespace GettingReal_DanGaming.Models
             get { return date; }
             set { date = value; }
         }
-
+        /*
         public string GetEmployeeInfo()
         {
             return $"Employee ID: {_id}, Pincode: {_pincode}, Date: {date:dd-MM-yyyy}";
         }
+
+        
+        public bool IsValidPincode()
+        {            
+            return !string.IsNullOrEmpty(_pincode) && _pincode.Length == 4 && _pincode.All(char.IsDigit);
+        }
+        */
 
         
 

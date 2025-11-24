@@ -17,7 +17,7 @@ namespace GettingReal_DanGaming.Models
             // Mangler metoden. :)
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(Products product)
         {
             // Mangler metoden. :) 
         }
