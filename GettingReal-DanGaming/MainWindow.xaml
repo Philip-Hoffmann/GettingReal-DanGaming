@@ -15,7 +15,7 @@
             Margin="5,5,0,20" 
             MaxHeight="40" 
             MaxWidth="200">
-            <Image Source="/Images/DangamingLogo.png"/>
+            <Image Source="/Images/DangamingLogo.png" Height="300" Width="1800"/>
         </Viewbox>
     </Grid>
 

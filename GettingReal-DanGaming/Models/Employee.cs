@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GettingReal_DanGaming.Models
+{
+    public class Employee
+    {
+        private string _id;
+        private string _pincode;
+        private DateTime date;
+
+
+        public string Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+        public string Pincode
+        {
+            get { return _pincode; }
+            set { _pincode = value; }
+        }
+
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
+
+
+    }
+
+
+}
+
+
+        
+
+
+
+
+
