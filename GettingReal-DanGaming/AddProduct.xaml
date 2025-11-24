@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingReal_DanGaming"
         mc:Ignorable="d"
-        Title="AddProduct" Height="450" Width="800">
-    <Grid>
-        
+        Title="AddProduct" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Images/DangamingLogo.png" 
+                   HorizontalAlignment="Left" 
+                   Height="50"/>
+            <Label Content="Tilføj nye produkter" HorizontalAlignment="Left" Margin="332,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="1.195,0.495" FontSize="20" FontWeight="Bold"/>
+
+
+        </Grid>
+
     </Grid>
 </Window>
