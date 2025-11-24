@@ -30,14 +30,17 @@ namespace GettingReal_DanGaming.Models
             set { date = value; }
         }
 
+        public string GetEmployeeInfo()
+        {
+            return $"Employee ID: {_id}, Pincode: {_pincode}, Date: {date:dd-MM-yyyy}";
+        }
+
+        fsfdfsfdfs 
 
     }
 
 
-}
-
-
-        
+}        
 
 
 
