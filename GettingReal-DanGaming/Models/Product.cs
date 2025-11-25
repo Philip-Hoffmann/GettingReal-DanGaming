@@ -22,5 +22,20 @@ namespace GettingReal_DanGaming.Models
             set { _dateOfReceipt = value; }
         }
 
+        public int addQuantity(Product product)
+        {
+            return 0;
+        }
+
+        public int removeQuantity(Product product)
+        {
+            return 0;
+        }
+
+        public void editProduct(Product product)
+        {
+
+        }
+
     }
 }
