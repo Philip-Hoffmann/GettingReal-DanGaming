@@ -69,11 +69,16 @@
                 <TextBox Text="0.00" Foreground="Gray"/>
 
                 <TextBlock Text="Beskrivelse" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast produkt beskrivelse (valgfri)" Foreground="Gray" Height="80" AcceptsReturn="True" VerticalContentAlignment="Top"/>
+                <TextBox Text="Indtast produktbeskrivelse (valgfri)" Foreground="Gray" Height="80" AcceptsReturn="True" VerticalContentAlignment="Top"/>
 
                 <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
                 <ComboBox>
                     <ComboBoxItem Content="Select category" IsSelected="True" IsEnabled="False"/>
+                </ComboBox>
+
+                <TextBlock Text="Under Kategori" Style="{StaticResource LabelStyle}"/>
+                <ComboBox>
+                    <ComboBoxItem Content="Select sub-category" IsSelected="True" IsEnabled="False"/>
                 </ComboBox>
 
                 <TextBlock Text="Quantity *" Style="{StaticResource LabelStyle}"/>
