@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using GettingReal_DanGaming.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,9 +14,12 @@ namespace GettingReal_DanGaming
 {
     public partial class MainWindow : Window
     {
+        public MainViewModel mvm { get; set; } = new MainViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = mvm;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

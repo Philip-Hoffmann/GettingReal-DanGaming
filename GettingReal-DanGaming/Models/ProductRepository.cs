@@ -12,7 +12,12 @@ namespace GettingReal_DanGaming.Models
 
         public ProductRepository() 
         {
-            products = new List<Product>();
+            products = new List<Product>() 
+            {
+                new Product { Id = 1, Brand = "Dell", Name = "Dell XPS 13", Price = 999.99, CategoryId = 1 },
+                new Product { Id = 2, Brand = "Apple", Name = "Apple MacBook Air", Price = 1199.99, CategoryId = 2 },
+                new Product { Id = 3, Brand = "HP", Name = "HP Spectre x360", Price = 1099.99, CategoryId = 3 },
+            };
         }
 
         public List<Product> GetAll()
