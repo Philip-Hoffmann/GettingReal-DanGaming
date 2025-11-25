@@ -1,9 +1,5 @@
-﻿using GettingReal_DanGaming.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using GettingReal_DanGaming.Models;
 
 namespace GettingReal_DanGaming.ViewModels
 {
@@ -12,17 +8,17 @@ namespace GettingReal_DanGaming.ViewModels
         private CategoryRepository categoryRepo;
         private ProductRepository productRepo;
 
-        public List<ProductViewModel> ProductsVM { get; set; }
+        public ObservableCollection<ProductViewModel> ProductsVM { get; set; }
 
         public MainViewModel()
         {
             categoryRepo = new CategoryRepository();
             productRepo = new ProductRepository();
 
-            ProductsVM = new List<ProductViewModel>();
+            ProductsVM = new ObservableCollection<ProductViewModel>();
             productRepo.GetAll().ForEach(product =>
             {
-                ProductsVM.Add(new ProductViewModel(product));
+                ProductsVM.Add(new ProductViewModel(product, categoryRepo));
             });
         }
     }

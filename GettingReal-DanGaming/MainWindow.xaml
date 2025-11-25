@@ -103,8 +103,8 @@
                 <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
                 <DataGridTextColumn Header="Pris" Binding="{Binding Price}" Width="80"/>
-                <DataGridTextColumn Header="Kategori" Binding="{Binding Category}" Width="*"/>
-                <DataGridTextColumn Header="Underkategori" Binding="{Binding Subcategory}" Width="*"/>
+                <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName}" Width="*"/>
+                <DataGridTextColumn Header="Underkategori" Binding="{Binding SubcategoryName}" Width="*"/>
                 <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
             </DataGrid.Columns>
         </DataGrid>

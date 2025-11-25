@@ -30,9 +30,24 @@ namespace GettingReal_DanGaming.ViewModels
             set { product.Quantity = value; }
         }
 
-        public ProductViewModel(Product product)
+        public string? CategoryName { get; set; }
+        public string? SubcategoryName { get; set; }
+
+        public ProductViewModel(Product product, CategoryRepository categoryRepo)
         {
             this.product = product;
+
+            Category? category = categoryRepo.GetCategory(product.CategoryId);
+            if (category != null)
+            {
+                CategoryName = category.ProductType;
+            }
+
+            Subcategory? subcategory = categoryRepo.GetSubcategory(product.SubcategoryId);
+            if (subcategory != null)
+            {
+                SubcategoryName = $"{subcategory.ModelName}, {subcategory.Manufacturer}";
+            }
         }   
     }
 }
