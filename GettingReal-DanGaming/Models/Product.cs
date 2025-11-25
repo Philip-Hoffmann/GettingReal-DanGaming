@@ -24,12 +24,12 @@ namespace GettingReal_DanGaming.Models
 
         public int addQuantity(Product product)
         {
-
+            return 0;
         }
 
         public int removeQuantity(Product product)
         {
-
+            return 0;
         }
 
         public void editProduct(Product product)
