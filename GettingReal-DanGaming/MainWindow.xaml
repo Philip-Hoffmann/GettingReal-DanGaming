@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GettingReal_DanGaming"
+        xmlns:local="clr-namespace:GettingReal_DanGaming.ViewModels"
         mc:Ignorable="d"
-        Title="DanGaming" Height="450" Width="800">
+        Title="DanGaming Lageroversigt" Height="450" Width="800">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -63,6 +63,24 @@
         <ListBox x:Name="WarehouseListBox"
                  Grid.Row="2"
                  BorderThickness="1"/>
-
+        <DataGrid 
+            Grid.Row="2" 
+            BorderThickness="1"
+            BorderBrush="Black"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            x:Name="ProductDataGrid"
+            
+            ItemsSource="{Binding Product}" SelectionChanged="ProductDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Produkt Navn" Binding="{Binding ProductNameList}" Width="*"/>
+                <DataGridTextColumn Header="Mærke" Binding="{Binding ProductBrand}" Width="*"/>
+                <DataGridTextColumn Header="Pris" Binding="{Binding ProductPrice}" Width="80"/>
+                <DataGridTextColumn Header="Kategori" Binding="{Binding ProductCategory}" Width="*"/>
+                <DataGridTextColumn Header="Underkategori" Binding="{Binding ProductSubCategory}" Width="*"/>
+                <DataGridTextColumn Header="Antal" Binding="{Binding ProductQuantity}" Width="50"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
