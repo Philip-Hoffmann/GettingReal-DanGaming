@@ -81,7 +81,7 @@
                     <ComboBoxItem Content="Select sub-category" IsSelected="True" IsEnabled="False"/>
                 </ComboBox>
 
-                <TextBlock Text="Quantity *" Style="{StaticResource LabelStyle}"/>
+                <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Text="0" Foreground="Gray"/>
 
             </StackPanel>
