@@ -45,10 +45,35 @@
                 <Grid Grid.Column="0" Margin="0,0,20,0">
 
                 </Grid>
-                <TextBox x:Name="SearchTextBox" 
-                         Width="200" 
-                         Padding="5"
-                         Text="🔍 Søg efter produkt"/>
+                <Grid Width="200" HorizontalAlignment="Left">
+
+                    <TextBox x:Name="SearchTextBox" 
+             Padding="5"
+             VerticalContentAlignment="Center"/>
+
+                    <TextBlock Text="🔍 Søg efter produkt"
+               IsHitTestVisible="False"
+               Foreground="Gray"
+               VerticalAlignment="Center"
+               Margin="7,0,0,0">
+
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Hidden"/>
+
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding ElementName=SearchTextBox, Path=Text.Length}" Value="0" />
+                                            <Condition Binding="{Binding ElementName=SearchTextBox, Path=IsKeyboardFocused}" Value="False" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Grid>
             </StackPanel>
 
             <Button x:Name="AddProductButton"
