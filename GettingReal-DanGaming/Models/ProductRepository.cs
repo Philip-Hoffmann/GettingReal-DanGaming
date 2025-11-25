@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace GettingReal_DanGaming.Models
 {
-    internal class ProductRepository
+    public class ProductRepository
     {
+        private List<Product> products;
+
+        public ProductRepository() 
+        {
+            products = new List<Product>();
+        }
+
+        public List<Product> GetAll()
+        {
+            return products;
+        }
     }
 }

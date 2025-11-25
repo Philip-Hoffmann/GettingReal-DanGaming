@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace GettingReal_DanGaming.Models
 {
-    internal class SubCategory
+    public class Subcategory
     {
-        public string ModelName;
-        public string Manufacturer;
+        public int Id { get; set; }
+        public string ModelName { get; set; }
+        public string Manufacturer { get; set; }
 
+        public int CategoryId { get; set; }
 
         public void Remove()
         {

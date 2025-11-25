@@ -18,5 +18,17 @@ namespace GettingReal_DanGaming
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Opret en instans af dit nye vindue
+            // Vi bruger det fulde navn fra din x:Class: GettingReal_DanGaming.AddProduct
+            var addWindow = new GettingReal_DanGaming.AddProduct();
+
+            // Vis vinduet
+            addWindow.Show();
+
+            // OBS: Hvis du vil lukke Login-vinduet samtidig, kan du tilføje:
+            // this.Close();
+        }
     }
 }
