@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingReal_DanGaming.ViewModels"
         mc:Ignorable="d"
-        Title="DanGaming Lageroversigt" Height="450" Width="800">
+        Title="DanGaming Lageroversigt" Height="450" Width="800"
+        Icon="/Images/LOGOSINGLE.png">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -41,7 +42,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,0,20,0">
-                <TextBlock Text="Produkt Oversigt" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="Produktoversigt" FontWeight="Bold" Margin="0,0,0,5"/>
                 <Grid Grid.Column="0" Margin="0,0,20,0">
 
                 </Grid>
@@ -99,7 +100,7 @@
             ItemsSource="{Binding ProductsVM}">
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Produkt Navn" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
                 <DataGridTextColumn Header="Pris" Binding="{Binding Price}" Width="80"/>
                 <DataGridTextColumn Header="Kategori" Binding="{Binding Category}" Width="*"/>

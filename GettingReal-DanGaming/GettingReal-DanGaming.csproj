@@ -11,12 +11,14 @@
 
   <ItemGroup>
     <None Remove="Images\DangamingLogo.png" />
+    <None Remove="Images\LOGOSINGLE.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\DangamingLogo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\LOGOSINGLE.png" />
   </ItemGroup>
 
   <ItemGroup>
