@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GettingReal_DanGaming.Models
 {
-    internal class Subcategory
+    public class Subcategory
     {
         public int Id { get; set; }
         public string ModelName { get; set; }
