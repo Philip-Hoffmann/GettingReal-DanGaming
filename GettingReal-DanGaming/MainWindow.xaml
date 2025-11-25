@@ -72,7 +72,7 @@
             IsReadOnly="True"
             x:Name="ProductDataGrid"
             
-            ItemsSource="{Binding Product}" SelectionChanged="ProductDataGrid_SelectionChanged">
+            ItemsSource="{Binding Product}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Produkt Navn" Binding="{Binding ProductNameList}" Width="*"/>
                 <DataGridTextColumn Header="Mærke" Binding="{Binding ProductBrand}" Width="*"/>
