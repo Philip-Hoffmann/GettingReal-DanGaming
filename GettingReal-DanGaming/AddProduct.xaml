@@ -59,11 +59,11 @@
         <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Auto">
             <StackPanel>
 
-                <TextBlock Text="Produkt Navn *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast produkt navn" Foreground="Gray"/>
+                <TextBlock Text="Produktnavn *" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="Indtast Produktnavn" Foreground="Gray"/>
 
                 <TextBlock Text="Mærke *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast Mærke navn" Foreground="Gray"/>
+                <TextBox Text="Indtast Mærke" Foreground="Gray"/>
 
                 <TextBlock Text="Pris *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Text="0.00" Foreground="Gray"/>
@@ -76,7 +76,7 @@
                     <ComboBoxItem Content="Vælg Kategori" IsSelected="True" IsEnabled="False"/>
                 </ComboBox>
 
-                <TextBlock Text="UnderKategori" Style="{StaticResource LabelStyle}"/>
+                <TextBlock Text="Underkategori" Style="{StaticResource LabelStyle}"/>
                 <ComboBox>
                     <ComboBoxItem Content="Vælg Underkategori" IsSelected="True" IsEnabled="False"/>
                 </ComboBox>
