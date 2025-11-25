@@ -71,15 +71,15 @@
             CanUserAddRows="False"
             IsReadOnly="True"
             x:Name="ProductDataGrid"
+            ItemsSource="{Binding ProductsVM}">
             
-            ItemsSource="{Binding Product}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Produkt Navn" Binding="{Binding ProductNameList}" Width="*"/>
-                <DataGridTextColumn Header="Mærke" Binding="{Binding ProductBrand}" Width="*"/>
-                <DataGridTextColumn Header="Pris" Binding="{Binding ProductPrice}" Width="80"/>
-                <DataGridTextColumn Header="Kategori" Binding="{Binding ProductCategory}" Width="*"/>
-                <DataGridTextColumn Header="Underkategori" Binding="{Binding ProductSubCategory}" Width="*"/>
-                <DataGridTextColumn Header="Antal" Binding="{Binding ProductQuantity}" Width="50"/>
+                <DataGridTextColumn Header="Produkt Navn" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
+                <DataGridTextColumn Header="Pris" Binding="{Binding Price}" Width="80"/>
+                <DataGridTextColumn Header="Kategori" Binding="{Binding Category}" Width="*"/>
+                <DataGridTextColumn Header="Underkategori" Binding="{Binding Subcategory}" Width="*"/>
+                <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

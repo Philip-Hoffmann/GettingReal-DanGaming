@@ -13,7 +13,11 @@ namespace GettingReal_DanGaming.Models
 
         public CategoryRepository()
         {
-            categories = new List<Category>();
+            categories = new List<Category>()
+            {
+                new Category { Id = 1, ProductType = "Laptops" },
+            };
+
             subcategories = new List<Subcategory>();
         }
 

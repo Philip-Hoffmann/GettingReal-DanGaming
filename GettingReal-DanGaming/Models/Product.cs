@@ -18,7 +18,7 @@ namespace GettingReal_DanGaming.Models
         public string DateOfRecipt { get; set; }
 
         public int CategoryId { get; set; }
-        public int SubcategoryId { get; set; }
+        public int? SubcategoryId { get; set; }
 
         public int AddQuantity(Product product)
         {
