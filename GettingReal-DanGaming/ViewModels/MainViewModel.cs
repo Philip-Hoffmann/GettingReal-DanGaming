@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
+using System.Windows.Input;
+using GettingReal_DanGaming.Commands;
 using GettingReal_DanGaming.Models;
 
 namespace GettingReal_DanGaming.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel
     {
         private CategoryRepository categoryRepo;
         private ProductRepository productRepo;
@@ -23,13 +24,12 @@ namespace GettingReal_DanGaming.ViewModels
             });
         }
 
+        public ICommand ShowAddProductCmd { get; set; } = new ShowAddProductCommand();
+
         private string _productSearch;
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
         public string ProductSearch 
-        { 
-            get 
+        {
+            get
             {
                 return _productSearch;
             }
@@ -37,10 +37,11 @@ namespace GettingReal_DanGaming.ViewModels
             set
             {
                 _productSearch = value;
+                
                 ProductsVM.Clear();
                 productRepo.GetAll().ForEach(product =>
                 {
-                    if (product.Name.StartsWith(_productSearch, StringComparison.OrdinalIgnoreCase))
+                    if (product.Name.Contains(_productSearch, StringComparison.OrdinalIgnoreCase))
                     {
                         ProductsVM.Add(new ProductViewModel(product, categoryRepo));
                     }

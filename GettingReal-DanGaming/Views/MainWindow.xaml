@@ -28,7 +28,7 @@
             <Button Grid.Column="1" 
                     Content="Login"
                     Padding="15,5"
-                    VerticalAlignment="Center" Click="Button_Click"/>
+                    VerticalAlignment="Center"/>
         </Grid>
 
         <Rectangle Grid.Row="0" VerticalAlignment="Bottom" Height="1" Fill="Black"/>
@@ -83,7 +83,7 @@
                     Content="Tilføj nyt produkt" 
                     VerticalAlignment="Bottom"
                     Padding="10,5"
-                    IsEnabled="false"/>
+                    Command="{Binding ShowAddProductCmd}"/>
         </Grid>
 
 
