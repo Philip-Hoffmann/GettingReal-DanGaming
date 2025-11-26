@@ -59,7 +59,6 @@
 
         <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Auto">
             <StackPanel>
-
                 <TextBlock Text="Produktnavn *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Text="Indtast Produktnavn" Foreground="Gray"/>
 
@@ -92,21 +91,59 @@
                         Padding="10" 
                         Margin="0,20,0,0"
                         BorderThickness="0"
-                        Cursor="Hand"/>
+                        Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </ScrollViewer>
 
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-
-            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid Margin="5">
+                    <TextBlock Text="Gridbox indhold her" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCC"/>
+                </Grid>
             </Border>
 
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
 
+                <Button Content="Slet" 
+                        Background="#D32F2F" 
+                        Foreground="White" 
+                        FontWeight="Bold"
+                        Padding="15,10"
+                        Margin="0,0,10,0"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button Content="Færdig" 
+                        Background="#388E3C" 
+                        Foreground="White" 
+                        FontWeight="Bold"
+                        Padding="15,10"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
 
         </Grid>
     </Grid>
