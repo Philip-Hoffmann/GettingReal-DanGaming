@@ -78,26 +78,30 @@
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
                          Tag="Indtast Produktnavn" 
                          Foreground="Gray"
-                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
+                         IsEnabled="{Binding IsAvailable}"
+                         Text="{Binding SelectedProduct.Name, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Mærke *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
                          Tag="Indtast Mærke" 
                          Foreground="Gray"
-                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
+                         IsEnabled="{Binding IsAvailable}"
+                         Text="{Binding SelectedProduct.Brand, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Pris *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
                          Tag="0.00" 
                          Foreground="Gray"
-                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
+                         IsEnabled="{Binding IsAvailable}"
+                         Text="{Binding SelectedProduct.Price, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Beskrivelse" Style="{StaticResource LabelStyle}"/>
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
                          Tag="Indtast Produktbeskrivelse (Valgfri)" 
                          Foreground="Gray"
                          Height="50"
-                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
+                         IsEnabled="{Binding IsAvailable}"
+                         Text="{Binding SelectedProduct.Description, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
                 <ComboBox>
@@ -113,7 +117,8 @@
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
                          Tag="0" 
                          Foreground="Gray"
-                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
+                         IsEnabled="{Binding IsAvailable}"
+                         Text="{Binding SelectedProduct.Quantity, UpdateSourceTrigger=PropertyChanged}"/>
 
             </StackPanel>
         </ScrollViewer>
@@ -126,7 +131,26 @@
 
             <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
                 <Grid Margin="5">
-                    <TextBlock Text="Gridbox indhold her" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCC"/>
+                    <DataGrid 
+                        Grid.Row="2" 
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        IsReadOnly="True"
+                        x:Name="ProductDataGrid"
+                        ItemsSource="{Binding ProductsVM}"
+                        SelectedItem="{Binding SelectedProduct}">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
+                            <DataGridTextColumn Header="Pris (Kr)" Binding="{Binding Price}" Width="80"/>
+                            <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName}" Width="*"/>
+                            <DataGridTextColumn Header="Underkategori" Binding="{Binding SubcategoryName}" Width="*"/>
+                            <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </Border>
 
@@ -138,7 +162,9 @@
                         FontWeight="Bold" 
                         Padding="15,10" 
                         BorderThickness="0"
-                        Cursor="Hand"/>
+                        Cursor="Hand"
+                        Command="{Binding AddProductCmd}"
+                        CommandParameter="{Binding}"/>
 
                 <Button Content="Slet" 
                         Background="#D32F2F" 

@@ -33,7 +33,12 @@ namespace GettingReal_DanGaming.ViewModels
         public string? CategoryName { get; set; }
         public string? SubcategoryName { get; set; }
 
-        public ProductViewModel(Product product, CategoryRepository categoryRepo)
+        public ProductViewModel(Product product)
+        {
+            this.product = product;
+        }
+
+        public ProductViewModel(Product product, CategoryRepository? categoryRepo)
         {
             this.product = product;
 
