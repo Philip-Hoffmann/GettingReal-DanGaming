@@ -28,7 +28,7 @@
             <Button Grid.Column="1" 
                     Content="Login"
                     Padding="15,5"
-                    VerticalAlignment="Center" Click="Button_Click"/>
+                    VerticalAlignment="Center"/>
         </Grid>
 
         <Rectangle Grid.Row="0" VerticalAlignment="Bottom" Height="1" Fill="Black"/>
@@ -50,7 +50,8 @@
 
                     <TextBox x:Name="SearchTextBox" 
              Padding="5"
-             VerticalContentAlignment="Center"/>
+             VerticalContentAlignment="Center"
+              Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
                     <TextBlock Text="🔍 Søg efter produkt"
                IsHitTestVisible="False"
@@ -82,7 +83,7 @@
                     Content="Tilføj nyt produkt" 
                     VerticalAlignment="Bottom"
                     Padding="10,5"
-                    IsEnabled="false"/>
+                    Command="{Binding ShowAddProductCmd}"/>
         </Grid>
 
 
