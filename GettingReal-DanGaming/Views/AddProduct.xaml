@@ -85,6 +85,14 @@
                 <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Text="0" Foreground="Gray"/>
 
+                <Button Content="Tilføj Produkt" 
+                        Background="Gray" 
+                        Foreground="White" 
+                        FontWeight="Bold" 
+                        Padding="10" 
+                        Margin="0,20,0,0"
+                        BorderThickness="0"
+                        Cursor="Hand"/>
             </StackPanel>
         </ScrollViewer>
 
@@ -97,6 +105,8 @@
 
             <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
             </Border>
+
+
 
         </Grid>
     </Grid>
