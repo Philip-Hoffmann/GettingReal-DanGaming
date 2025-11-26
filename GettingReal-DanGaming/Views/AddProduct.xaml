@@ -72,51 +72,34 @@
                Height="50"
                Margin="0,0,0,20"/>
 
-        <Grid Grid.Row="1" Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Produktnavn *" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="Indtast Produktnavn" Foreground="Gray"/>
 
-            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    <TextBlock Text="Produktnavn *" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="Indtast Produktnavn" Foreground="Gray"/>
+                <TextBlock Text="Mærke *" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="Indtast Mærke" Foreground="Gray"/>
 
-                    <TextBlock Text="Mærke *" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="Indtast Mærke" Foreground="Gray"/>
+                <TextBlock Text="Pris *" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="0.00" Foreground="Gray"/>
 
-                    <TextBlock Text="Pris *" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="0.00" Foreground="Gray"/>
+                <TextBlock Text="Beskrivelse" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="Indtast produktbeskrivelse (valgfri)" Foreground="Gray" Height="80" AcceptsReturn="True" VerticalContentAlignment="Top"/>
 
-                    <TextBlock Text="Beskrivelse" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="Indtast produktbeskrivelse (valgfri)" Foreground="Gray" Height="80" AcceptsReturn="True" VerticalContentAlignment="Top"/>
+                <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
+                <ComboBox>
+                    <ComboBoxItem Content="Vælg Kategori" IsSelected="True" IsEnabled="False"/>
+                </ComboBox>
 
-                    <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
-                    <ComboBox>
-                        <ComboBoxItem Content="Vælg Kategori" IsSelected="True" IsEnabled="False"/>
-                    </ComboBox>
+                <TextBlock Text="Underkategori" Style="{StaticResource LabelStyle}"/>
+                <ComboBox>
+                    <ComboBoxItem Content="Vælg Underkategori" IsSelected="True" IsEnabled="False"/>
+                </ComboBox>
 
-                    <TextBlock Text="Underkategori" Style="{StaticResource LabelStyle}"/>
-                    <ComboBox>
-                        <ComboBoxItem Content="Vælg Underkategori" IsSelected="True" IsEnabled="False"/>
-                    </ComboBox>
-
-                    <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
-                    <TextBox Text="0" Foreground="Gray"/>
-                </StackPanel>
-            </ScrollViewer>
-
-            <Button Grid.Row="1"
-                    Content="Tilføj Produkt" 
-                    Background="Gray" 
-                    Foreground="White" 
-                    FontWeight="Bold" 
-                    Padding="10" 
-                    Margin="0,10,0,0"
-                    BorderThickness="0"
-                    Cursor="Hand"/>
-        </Grid>
+                <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="0" Foreground="Gray"/>
+            </StackPanel>
+        </ScrollViewer>
 
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
@@ -130,25 +113,36 @@
                 </Grid>
             </Border>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+
+                <Button Content="Tilføj Produkt" 
+                        Background="Gray" 
+                        Foreground="White" 
+                        FontWeight="Bold" 
+                        Padding="15,10" 
+                        BorderThickness="0"
+                        Cursor="Hand"/>
 
                 <Button Content="Slet" 
                         Background="#D32F2F" 
                         Foreground="White" 
                         FontWeight="Bold"
                         Padding="15,10"
-                        Margin="0,0,10,0"
-                        BorderThickness="0"
-                        Cursor="Hand"/>
-
-                <Button Content="Færdig" 
-                        Background="#388E3C" 
-                        Foreground="White" 
-                        FontWeight="Bold"
-                        Padding="15,10"
+                        Margin="10,0,0,0" 
                         BorderThickness="0"
                         Cursor="Hand"/>
             </StackPanel>
+
+            <Button Grid.Row="1"
+                    Content="Færdig" 
+                    HorizontalAlignment="Right"
+                    Background="#388E3C" 
+                    Foreground="White" 
+                    FontWeight="Bold"
+                    Padding="15,10"
+                    Margin="0,10,0,0"
+                    BorderThickness="0"
+                    Cursor="Hand"/>
 
         </Grid>
     </Grid>
