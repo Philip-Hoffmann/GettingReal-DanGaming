@@ -21,11 +21,20 @@ namespace GettingReal_DanGaming
     public partial class AddProduct : Window
     {
         public AddProductViewModel AddProductVM { get; set; } = new AddProductViewModel();
+        public List<ProductViewModel> ProductsVM { get; set; } = new List<ProductViewModel>();
 
         public AddProduct()
         {
             InitializeComponent();
             DataContext = AddProductVM;
+            AddProductVM.Close = CloseDialog;
+        }
+
+        private void CloseDialog(bool result)
+        { 
+            ProductsVM = AddProductVM.ProductsVM.ToList();
+            DialogResult = result;
+            Close();
         }
 
         private void category_SelectionChanged(object sender, SelectionChangedEventArgs e)

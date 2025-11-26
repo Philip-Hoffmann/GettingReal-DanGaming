@@ -29,9 +29,25 @@ namespace GettingReal_DanGaming.Models
             return products;
         }
 
-        //public Product Add(string name, string brand, double price,  string description)
-        //{
+        public Product Add(string name, string brand, double price, int quantity, int categoryId, int? subcategoryId, string? description)
+        {
+            int id = products.Last().Id++;
+            Product product = new Product()
+            {
+                Id = id,
+                Name = name,
+                Description = description,
+                Brand = brand,
+                Price = price,
+                Quantity = quantity,
+                MinimumQuantity = 3,
+                DateOfRecipt = DateTime.Now.ToString("dd/MM/yyyy"),
+                CategoryId = categoryId,
+                SubcategoryId = subcategoryId
+            };
 
-        //}
+            products.Add(product);
+            return product;
+        }
     }
 }

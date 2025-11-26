@@ -49,5 +49,11 @@ namespace GettingReal_DanGaming.ViewModels
                 });
             }
         }
+
+        public void AddProduct(ProductViewModel productVM)
+        {
+            Product product = productRepo.Add(productVM.Name, productVM.Brand, productVM.Price, productVM.Quantity, productVM.CategoryId, productVM.SubcategoryId, productVM.Description);
+            ProductsVM.Add(new ProductViewModel(product, categoryRepo));
+        }
     }
 }

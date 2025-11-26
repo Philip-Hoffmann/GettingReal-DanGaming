@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GettingReal_DanGaming.ViewModels;
+using System;
 using System.Windows.Input;
 
 namespace GettingReal_DanGaming.Commands
@@ -14,8 +15,19 @@ namespace GettingReal_DanGaming.Commands
 
         public void Execute(object? parameter)
         {
-            AddProduct addProductDialog = new AddProduct();
-            addProductDialog.ShowDialog();
+            if (parameter is MainViewModel mvm)
+            {
+                AddProduct addProductDialog = new AddProduct();
+                bool? result = addProductDialog.ShowDialog();
+
+                if (result == true)
+                {
+                    foreach (ProductViewModel product in addProductDialog.ProductsVM)
+                    {
+                        mvm.AddProduct(product);
+                    }
+                }
+            }
         }
     }
 }

@@ -98,6 +98,8 @@ namespace GettingReal_DanGaming.ViewModels
         public ICommand RemoveProductCmd { get; set; } = new RemoveProductCommand();
         public ICommand AddAllProductsCmd { get; set; } = new AddAllProductsCommand();
 
+        public Action<bool> Close { get; set; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

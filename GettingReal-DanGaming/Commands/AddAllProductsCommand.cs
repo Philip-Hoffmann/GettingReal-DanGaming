@@ -46,7 +46,7 @@ namespace GettingReal_DanGaming.Commands
         {
             if (parameter is AddProductViewModel addProductVM)
             {
-
+                addProductVM.Close.Invoke(true);
             }
         }
     }

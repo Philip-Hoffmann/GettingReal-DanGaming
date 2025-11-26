@@ -84,7 +84,8 @@
                     Content="Tilføj nyt produkt" 
                     VerticalAlignment="Bottom"
                     Padding="10,5"
-                    Command="{Binding ShowAddProductCmd}"/>
+                    Command="{Binding ShowAddProductCmd}"
+                    CommandParameter="{Binding}"/>
         </Grid>
 
 
