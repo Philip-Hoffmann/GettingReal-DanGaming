@@ -35,6 +35,20 @@ namespace GettingReal_DanGaming.Models
             return subcategories;
         }
 
+        public List<Subcategory> GetSubcategoriesOfCategory(int categoryId)
+        {
+            List<Subcategory> subcategories = new List<Subcategory>();
+            foreach (Subcategory subcategory in this.subcategories)
+            {
+                if (subcategory.CategoryId == categoryId)
+                {
+                    subcategories.Add(subcategory);
+                }
+            }
+
+            return subcategories;
+        }
+
         public Category? GetCategory(int id)
         {
             Category? result = null;

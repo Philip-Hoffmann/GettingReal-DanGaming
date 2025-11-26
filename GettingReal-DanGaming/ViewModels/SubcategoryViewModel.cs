@@ -11,14 +11,27 @@ namespace GettingReal_DanGaming.ViewModels
     {
         private Subcategory subcategory;
 
+        public int Id
+        {
+            get { return subcategory.Id; }
+        }
+
         public string ModelName
         {
             get { return subcategory.ModelName; }
         }
 
-        public string Manufacturer
+        public string? Manufacturer
         {
             get { return subcategory.Manufacturer; }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return $"{subcategory.ModelName}, {subcategory.Manufacturer}";
+            }
         }
 
         public SubcategoryViewModel(Subcategory subcategory)

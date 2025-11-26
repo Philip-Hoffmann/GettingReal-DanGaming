@@ -99,6 +99,7 @@
             CanUserAddRows="False"
             IsReadOnly="True"
             x:Name="ProductDataGrid"
+            SelectionMode="Single"
             ItemsSource="{Binding ProductsVM}">
             
             <DataGrid.Columns>

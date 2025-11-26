@@ -104,14 +104,22 @@
                          Text="{Binding SelectedProduct.Description, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
-                <ComboBox>
-                    <ComboBoxItem Content="Vælg Kategori" IsSelected="True" IsEnabled="False"/>
-                </ComboBox>
+                <ComboBox x:Name="category" 
+                    IsEnabled="{Binding IsAvailable}" 
+                    ItemsSource="{Binding CategoriesVM}" 
+                    DisplayMemberPath="ProductType" 
+                    SelectedValuePath="Id" 
+                    SelectedValue="{Binding SelectedProduct.CategoryId}" SelectionChanged="category_SelectionChanged" 
+                ></ComboBox>
 
                 <TextBlock Text="Underkategori" Style="{StaticResource LabelStyle}"/>
-                <ComboBox>
-                    <ComboBoxItem Content="Vælg Underkategori" IsSelected="True" IsEnabled="False"/>
-                </ComboBox>
+                <ComboBox x:Name="subcategory" 
+                    IsEnabled="{Binding IsAvailable}" 
+                    ItemsSource="{Binding SubcategoriesVM}" 
+                    DisplayMemberPath="Name" 
+                    SelectedValuePath="Id" 
+                    SelectedValue="{Binding SelectedProduct.SubcategoryId}" SelectionChanged="subcategory_SelectionChanged" 
+                ></ComboBox>
 
                 <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
                 <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
@@ -133,6 +141,7 @@
                 <Grid Margin="5">
                     <DataGrid 
                         Grid.Row="2" 
+                        SelectionMode="Single"
                         BorderThickness="1"
                         BorderBrush="Black"
                         AutoGenerateColumns="False"
@@ -142,11 +151,19 @@
                         ItemsSource="{Binding ProductsVM}"
                         SelectedItem="{Binding SelectedProduct}">
 
+                        <DataGrid.Resources>
+                            <SolidColorBrush 
+                                x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                    Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
+                                Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" />
+                        </DataGrid.Resources>
+                        
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
                             <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
                             <DataGridTextColumn Header="Pris (Kr)" Binding="{Binding Price}" Width="80"/>
-                            <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName}" Width="*"/>
+                            <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName, Mode=TwoWay}" Width="*"/>
                             <DataGridTextColumn Header="Underkategori" Binding="{Binding SubcategoryName}" Width="*"/>
                             <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
                         </DataGrid.Columns>
@@ -173,7 +190,9 @@
                         Padding="15,10"
                         Margin="10,0,0,0" 
                         BorderThickness="0"
-                        Cursor="Hand"/>
+                        Cursor="Hand"
+                        Command="{Binding RemoveProductCmd}"
+                        CommandParameter="{Binding}"/>
             </StackPanel>
 
             <Button Grid.Row="1"
@@ -185,7 +204,9 @@
                     Padding="15,10"
                     Margin="0,10,0,0"
                     BorderThickness="0"
-                    Cursor="Hand"/>
+                    Cursor="Hand"
+                    Command="{Binding AddAllProductsCmd}"
+                    CommandParameter="{Binding}"/>
 
         </Grid>
     </Grid>

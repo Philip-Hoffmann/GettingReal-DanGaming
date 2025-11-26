@@ -27,5 +27,16 @@ namespace GettingReal_DanGaming
             InitializeComponent();
             DataContext = AddProductVM;
         }
+
+        private void category_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AddProductVM.UpdateCategoryName();
+            AddProductVM.UpdateSubcategories();
+        }
+
+        private void subcategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AddProductVM.UpdateSubcategoryName();
+        }
     }
 }

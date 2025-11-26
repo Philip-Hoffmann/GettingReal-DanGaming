@@ -28,5 +28,10 @@ namespace GettingReal_DanGaming.Models
         {
             return products;
         }
+
+        //public Product Add(string name, string brand, double price,  string description)
+        //{
+
+        //}
     }
 }

@@ -11,6 +11,11 @@ namespace GettingReal_DanGaming.ViewModels
     {
         private Category category;
 
+        public int Id
+        {
+            get { return category.Id; }
+        }
+
         public string ProductType
         {
             get { return category.ProductType; }
