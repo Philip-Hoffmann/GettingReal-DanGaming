@@ -24,6 +24,7 @@ namespace GettingReal_DanGaming.ViewModels
             });
         }
 
+        public ICommand ShowLoginDialogCmd { get; set; } = new ShowLoginDialogCommand();
         public ICommand ShowAddProductCmd { get; set; } = new ShowAddProductCommand();
 
         private string _productSearch;

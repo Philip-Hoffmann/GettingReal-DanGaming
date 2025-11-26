@@ -28,7 +28,8 @@
             <Button Grid.Column="1" 
                     Content="Login"
                     Padding="15,5"
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center"
+                    Command="{Binding ShowLoginDialogCmd}"/>
         </Grid>
 
         <Rectangle Grid.Row="0" VerticalAlignment="Bottom" Height="1" Fill="Black"/>

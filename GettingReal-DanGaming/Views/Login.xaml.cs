@@ -1,5 +1,4 @@
-﻿using GettingReal_DanGaming.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,19 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GettingReal_DanGaming
+namespace GettingReal_DanGaming.Views
 {
     /// <summary>
-    /// Interaction logic for AddProduct.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class AddProduct : Window
+    public partial class Login : Window
     {
-        public AddProductViewModel AddProductVM { get; set; } = new AddProductViewModel();
-
-        public AddProduct()
+        public Login()
         {
             InitializeComponent();
-            DataContext = AddProductVM;
         }
     }
 }
