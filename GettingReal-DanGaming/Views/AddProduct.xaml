@@ -138,37 +138,33 @@
             </Grid.RowDefinitions>
 
             <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
-                <Grid Margin="5">
-                    <DataGrid 
-                        Grid.Row="2" 
-                        SelectionMode="Single"
-                        BorderThickness="1"
-                        BorderBrush="Black"
-                        AutoGenerateColumns="False"
-                        CanUserAddRows="False"
-                        IsReadOnly="True"
-                        x:Name="ProductDataGrid"
-                        ItemsSource="{Binding ProductsVM}"
-                        SelectedItem="{Binding SelectedProduct}">
+                <DataGrid 
+                    Grid.Row="2" 
+                    SelectionMode="Single"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    IsReadOnly="True"
+                    x:Name="ProductDataGrid"
+                    ItemsSource="{Binding ProductsVM}"
+                    SelectedItem="{Binding SelectedProduct}">
 
-                        <DataGrid.Resources>
-                            <SolidColorBrush 
-                                x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
-                                    Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
-                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
-                                Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" />
-                        </DataGrid.Resources>
+                    <DataGrid.Resources>
+                        <SolidColorBrush 
+                            x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
+                            Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" />
+                    </DataGrid.Resources>
                         
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
-                            <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
-                            <DataGridTextColumn Header="Pris (Kr)" Binding="{Binding Price}" Width="80"/>
-                            <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName, Mode=TwoWay}" Width="*"/>
-                            <DataGridTextColumn Header="Underkategori" Binding="{Binding SubcategoryName}" Width="*"/>
-                            <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Produktnavn" Binding="{Binding Name}" Width="*"/>
+                        <DataGridTextColumn Header="Mærke" Binding="{Binding Brand}" Width="*"/>
+                        <DataGridTextColumn Header="Pris (Kr)" Binding="{Binding Price}" Width="80"/>
+                        <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Underkategori" Binding="{Binding SubcategoryName}" Width="*"/>
+                        <DataGridTextColumn Header="Antal" Binding="{Binding Quantity}" Width="50"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Border>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
