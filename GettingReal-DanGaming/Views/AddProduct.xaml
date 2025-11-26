@@ -61,16 +61,29 @@
             <StackPanel>
 
                 <TextBlock Text="Produktnavn *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast Produktnavn" Foreground="Gray"/>
+                <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
+                         Tag="Indtast Produktnavn" 
+                         Foreground="Gray"
+                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Mærke *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast Mærke" Foreground="Gray"/>
+                <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
+                         Tag="Indtast Mærke" 
+                         Foreground="Gray"
+                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Pris *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="0.00" Foreground="Gray"/>
+                <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
+                         Tag="0.00" 
+                         Foreground="Gray"
+                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Beskrivelse" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="Indtast produktbeskrivelse (valgfri)" Foreground="Gray" Height="80" AcceptsReturn="True" VerticalContentAlignment="Top"/>
+                <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
+                         Tag="Indtast Produktbeskrivelse (Valgfri)" 
+                         Foreground="Gray"
+                         Height="50"
+                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Kategori *" Style="{StaticResource LabelStyle}"/>
                 <ComboBox>
@@ -83,7 +96,10 @@
                 </ComboBox>
 
                 <TextBlock Text="Antal *" Style="{StaticResource LabelStyle}"/>
-                <TextBox Text="0" Foreground="Gray"/>
+                <TextBox Style="{StaticResource WatermarkTextBoxStyle}" 
+                         Tag="0" 
+                         Foreground="Gray"
+                         Text="{Binding ProductSearch, UpdateSourceTrigger=PropertyChanged}"/>
 
             </StackPanel>
         </ScrollViewer>
