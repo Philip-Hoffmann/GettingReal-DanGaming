@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GettingReal_DanGaming.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace GettingReal_DanGaming
     /// </summary>
     public partial class AddProduct : Window
     {
+        public AddProductViewModel AddProductVM { get; set; } = new AddProductViewModel();
+
         public AddProduct()
         {
             InitializeComponent();
+            DataContext = AddProductVM;
         }
     }
 }
