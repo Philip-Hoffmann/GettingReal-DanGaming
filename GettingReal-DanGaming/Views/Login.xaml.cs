@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GettingReal_DanGaming.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,25 @@ namespace GettingReal_DanGaming.Views
     /// </summary>
     public partial class Login : Window
     {
+        public LoginViewModel LoginVM { get; set; } = new LoginViewModel();
+        public EmployeeViewModel EmployeeVM { get; set; }
+
         public Login()
         {
             InitializeComponent();
+            DataContext = LoginVM;
+            LoginVM.Close = CloseDialog;
+        }
+
+        private void CloseDialog(bool result)
+        {
+            if (result)
+            {
+                EmployeeVM = LoginVM.EmployeeVM;
+            }
+
+            DialogResult = result;
+            Close();
         }
     }
 }

@@ -26,10 +26,11 @@
                    Height="50"/>
 
             <Button Grid.Column="1" 
-                    Content="Login"
+                    Content="{Binding LoginButtonText}"
                     Padding="15,5"
                     VerticalAlignment="Center"
-                    Command="{Binding ShowLoginDialogCmd}"/>
+                    Command="{Binding ShowLoginDialogCmd}"
+                    CommandParameter="{Binding}"/>
         </Grid>
 
         <Rectangle Grid.Row="0" VerticalAlignment="Bottom" Height="1" Fill="Black"/>

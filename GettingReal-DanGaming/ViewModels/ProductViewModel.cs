@@ -1,6 +1,6 @@
-﻿using GettingReal_DanGaming.Models;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using GettingReal_DanGaming.Models;
 
 namespace GettingReal_DanGaming.ViewModels
 {

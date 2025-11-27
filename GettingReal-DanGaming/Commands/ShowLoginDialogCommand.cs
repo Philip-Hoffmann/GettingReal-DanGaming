@@ -1,4 +1,5 @@
-﻿using GettingReal_DanGaming.Views;
+﻿using GettingReal_DanGaming.ViewModels;
+using GettingReal_DanGaming.Views;
 using System.Windows.Input;
 
 namespace GettingReal_DanGaming.Commands
@@ -14,8 +15,23 @@ namespace GettingReal_DanGaming.Commands
 
         public void Execute(object? parameter)
         {
-            Login loginDialog = new Login();
-            loginDialog.ShowDialog();
+            if (parameter is MainViewModel mvm)
+            {
+                if (mvm.EmployeeVM == null)
+                {
+                    Login loginDialog = new Login();
+                    bool? result = loginDialog.ShowDialog();
+
+                    if (result == true)
+                    {
+                        mvm.EmployeeVM = loginDialog.EmployeeVM;
+                    }
+                } 
+                else
+                {
+                    mvm.EmployeeVM = null;
+                }
+            }
         }
     }
 }

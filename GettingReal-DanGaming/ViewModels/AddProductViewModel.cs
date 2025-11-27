@@ -1,16 +1,18 @@
-﻿using GettingReal_DanGaming.Commands;
-using GettingReal_DanGaming.Models;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using GettingReal_DanGaming.Commands;
+using GettingReal_DanGaming.Models;
 
 namespace GettingReal_DanGaming.ViewModels
 {
+
     public class AddProductViewModel : INotifyPropertyChanged
     {
         private CategoryRepository categoryRepo;
-        private ProductRepository productRepo;
+
+        public CloseDialog Close { get; set; }
 
         public ObservableCollection<ProductViewModel> ProductsVM { get; set; }
         public ObservableCollection<CategoryViewModel> CategoriesVM { get; set; }
@@ -19,7 +21,6 @@ namespace GettingReal_DanGaming.ViewModels
         public AddProductViewModel()
         {
             categoryRepo = new CategoryRepository();
-            productRepo = new ProductRepository();
 
             ProductsVM = new ObservableCollection<ProductViewModel>();
             CategoriesVM = new ObservableCollection<CategoryViewModel>();
@@ -97,8 +98,6 @@ namespace GettingReal_DanGaming.ViewModels
         public ICommand AddProductCmd { get; set; } = new AddProductCommand();
         public ICommand RemoveProductCmd { get; set; } = new RemoveProductCommand();
         public ICommand AddAllProductsCmd { get; set; } = new AddAllProductsCommand();
-
-        public Action<bool> Close { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

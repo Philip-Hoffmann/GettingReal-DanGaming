@@ -6,11 +6,25 @@ namespace GettingReal_DanGaming.Commands
 {
     internal class ShowAddProductCommand : ICommand
     {
-        public event EventHandler? CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public bool CanExecute(object? parameter)
         {
-            return true;
+            bool result = true;
+            if (parameter is MainViewModel mvm)
+            {
+                if (mvm.EmployeeVM == null)
+                {
+                    result = false;
+                }
+            }
+
+            CommandManager.InvalidateRequerySuggested();
+            return result;
         }
 
         public void Execute(object? parameter)
