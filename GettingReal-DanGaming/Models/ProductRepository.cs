@@ -25,7 +25,13 @@
 
         public Product Add(string name, string brand, double price, int quantity, int categoryId, int? subcategoryId, string? description)
         {
-            int id = products.Last().Id++;
+            int id = 1;
+            Product? lastProduct = products.Last();
+            if (lastProduct != null)
+            {
+                id = lastProduct.Id + 1;
+            } 
+            
             Product product = new Product()
             {
                 Id = id,
