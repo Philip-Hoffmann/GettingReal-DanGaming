@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingReal_DanGaming.Views"
         mc:Ignorable="d"
-        Title="Log ind" Height="300" Width="400">
+        Title="Log ind" Height="300" Width="400"
+        Icon="/Images/LOGOSINGLE.png">
+        
     <Grid>
-        <TextBox Style="{StaticResource WatermarkTextBoxStyle}" HorizontalAlignment="Center" Margin="0,101,0,0" TextWrapping="Wrap" Tag="ID" Text="{Binding EmployeeId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="200" Height="25" FontSize="15"/>
-        <TextBox Style="{StaticResource WatermarkTextBoxStyle}" HorizontalAlignment="Center" TextWrapping="Wrap" Tag="PIN" Text="{Binding EmployeePincode, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="200" Height="25" Margin="0,142,0,0" FontSize="15"/>
+        <TextBox Style="{StaticResource WatermarkTextBoxStyle}" HorizontalAlignment="Center" Margin="0,101,0,0" TextWrapping="Wrap" Tag="ID" Text="{Binding EmployeeId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="200" FontSize="15"/>
+        <TextBox Style="{StaticResource WatermarkTextBoxStyle}" HorizontalAlignment="Center" TextWrapping="Wrap" Tag="PIN" Text="{Binding EmployeePincode, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"  Margin="0,142,0,0" FontSize="15" Width="200"/>
         <Image HorizontalAlignment="Center" Height="58" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" Source="/Images/DangamingLogo.png"/>
         <Button Content="Log ind" HorizontalAlignment="Left" Margin="100,210,0,0" VerticalAlignment="Top" Width="80" Height="30" Command="{Binding LoginCmd}" CommandParameter="{Binding}"/>
         <Button Content="Fortryd" HorizontalAlignment="Left" Margin="220,210,0,0" VerticalAlignment="Top" Width="80" Height="30" Command="{Binding CancelLoginCmd}" CommandParameter="{Binding}"/>
