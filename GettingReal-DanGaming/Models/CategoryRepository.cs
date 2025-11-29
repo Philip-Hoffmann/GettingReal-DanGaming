@@ -1,4 +1,6 @@
-﻿namespace GettingReal_DanGaming.Models
+﻿using System.IO;
+
+namespace GettingReal_DanGaming.Models
 {
     public class CategoryRepository
     {
@@ -7,16 +9,92 @@
 
         public CategoryRepository()
         {
-            categories = new List<Category>()
-            {
-                new Category { Id = 1, ProductType = "Laptops" },
-                new Category { Id = 2, ProductType = "Grafikkort" },
-            };
+            categories = new List<Category>();
+            subcategories = new List<Subcategory>();
 
-            subcategories = new List<Subcategory>()
+            InitializeRepository();
+        }
+
+        private void InitializeRepository()
+        {
+            try
             {
-                new Subcategory { Id = 1, ModelName = "RTX 5060", Manufacturer = "Nvidia", CategoryId = 2 }
-            };
+                using (StreamReader reader = new StreamReader("categories.csv"))
+                {
+                    string line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        string[] parts = line.Split(";");
+                        Category category = new Category()
+                        {
+                            Id = int.Parse(parts[0]),
+                            ProductType = parts[1]
+                        };
+
+                        categories.Add(category);
+                        line = reader.ReadLine();
+                    }
+                }
+
+                using (StreamReader reader = new StreamReader("subcategories.csv"))
+                {
+                    string line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        string[] parts = line.Split(";");
+                        Subcategory subcategory = new Subcategory()
+                        {
+                            Id = int.Parse(parts[0]),
+                            ModelName = parts[1],
+                            Manufacturer = string.IsNullOrEmpty(parts[2]) ? null : parts[2],
+                            CategoryId = int.Parse(parts[3])
+                        };
+
+                        subcategories.Add(subcategory);
+                        line = reader.ReadLine();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void SaveCategories()
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("categories.csv", false))
+                {
+                    foreach (Category category in categories)
+                    {
+                        writer.WriteLine(category.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void SaveSubcategories()
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("subcategories.csv", false))
+                {
+                    foreach (Subcategory subcategory in subcategories)
+                    {
+                        writer.WriteLine(subcategory.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<Category> GetCategories()

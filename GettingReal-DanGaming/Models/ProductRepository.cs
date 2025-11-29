@@ -1,4 +1,6 @@
-﻿namespace GettingReal_DanGaming.Models
+﻿using System.IO;
+
+namespace GettingReal_DanGaming.Models
 {
     public class ProductRepository
     {
@@ -6,16 +8,61 @@
 
         public ProductRepository() 
         {
-            products = new List<Product>() 
-            {
-                new Product { Id = 1, Brand = "Dell", Name = "Dell XPS 13", Price = 999.99, CategoryId = 1 },
-                new Product { Id = 2, Brand = "Apple", Name = "Apple MacBook Air", Price = 1199.99, CategoryId = 1 },
-                new Product { Id = 3, Brand = "HP", Name = "HP Spectre x360", Price = 1099.99, CategoryId = 1 },
+            products = new List<Product>();
+            InitializeRepository();
+        }
 
-                new Product { Id = 3, Brand = "MSI", Name = "Geforce RTX 5060", Price = 500.0, CategoryId = 2, SubcategoryId = 1 },
-                new Product { Id = 3, Brand = "ASUS", Name = "Geforce RTX 5060", Price = 500.0, CategoryId = 2, SubcategoryId = 1 },
-                new Product { Id = 3, Brand = "Gigabyte", Name = "Geforce RTX 5060", Price = 500.0, CategoryId = 2, SubcategoryId = 1 },
-            };
+        private void InitializeRepository()
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader("products.csv"))
+                {
+                    string line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        string[] parts = line.Split(";");
+                        Product product = new Product() 
+                        {
+                            Id = int.Parse(parts[0]),
+                            Name = parts[1],
+                            Description = string.IsNullOrEmpty(parts[2]) ? null : parts[2],
+                            Brand = parts[3].ToString(),
+                            Price = double.Parse(parts[4]),
+                            Quantity = int.Parse(parts[5]),
+                            MinimumQuantity = int.Parse(parts[6]),
+                            DateOfRecipt = parts[7],
+                            CategoryId = int.Parse(parts[8]),
+                            SubcategoryId = string.IsNullOrEmpty(parts[9]) ? null : int.Parse(parts[9])
+                        };
+
+                        products.Add(product);
+                        line = reader.ReadLine();
+                    }
+                }
+            } 
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void SaveRepository()
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("products.csv", false))
+                {
+                    foreach (Product product in products)
+                    {
+                        writer.WriteLine(product.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<Product> GetAll()
@@ -26,7 +73,7 @@
         public Product Add(string name, string brand, double price, int quantity, int categoryId, int? subcategoryId, string? description)
         {
             int id = 1;
-            Product? lastProduct = products.Last();
+            Product? lastProduct = products.LastOrDefault();
             if (lastProduct != null)
             {
                 id = lastProduct.Id + 1;
@@ -47,6 +94,7 @@
             };
 
             products.Add(product);
+            SaveRepository();
             return product;
         }
     }

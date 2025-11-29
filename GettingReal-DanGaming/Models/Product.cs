@@ -14,18 +14,9 @@
         public int CategoryId { get; set; }
         public int? SubcategoryId { get; set; }
 
-        public int AddQuantity(Product product)
+        public override string ToString()
         {
-            return 0;
-        }
-
-        public int RemoveQuantity(Product product)
-        {
-            return 0;
-        }
-
-        public void EditProduct(Product product)
-        {
+            return $"{Id};{Name};{Description};{Brand};{Price};{Quantity};{MinimumQuantity};{DateOfRecipt};{CategoryId};{SubcategoryId}";
         }
     }
 }

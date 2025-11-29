@@ -5,14 +5,9 @@
         public int Id { get; set; }
         public string ProductType { get; set; }
 
-        public void AddSubcategory(string modelName, string manufacturer)
+        public override string ToString()
         {
-            // Mangler metoden. :)
-        }
-
-        public void Remove()
-        {
-            // Mangler metoden. :)
+            return $"{Id};{ProductType}";
         }
     }
 }

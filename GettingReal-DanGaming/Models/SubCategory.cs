@@ -8,14 +8,9 @@
 
         public int CategoryId { get; set; }
 
-        public void Remove()
+        public override string ToString()
         {
-            // Mangler metoden. :)
-        }
-
-        public void AddProduct(Product product)
-        {
-            // Mangler metoden. :) 
+            return $"{Id};{ModelName};{Manufacturer};{CategoryId}";
         }
     }
 }
