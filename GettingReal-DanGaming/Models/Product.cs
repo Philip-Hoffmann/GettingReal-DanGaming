@@ -9,7 +9,7 @@
         public double Price { get; set; }
         public int Quantity { get; set; }
         public int MinimumQuantity { get; set; }
-        public string DateOfRecipt { get; set; }
+        public DateTime DateOfRecipt { get; set; }
 
         public int CategoryId { get; set; }
         public int? SubcategoryId { get; set; }

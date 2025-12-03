@@ -14,6 +14,11 @@ namespace GettingReal_DanGaming.Models
 
         private void InitializeRepository()
         {
+            if (!File.Exists("products.csv"))
+            {
+                SaveRepository();
+            }
+
             try
             {
                 using (StreamReader reader = new StreamReader("products.csv"))
@@ -88,7 +93,7 @@ namespace GettingReal_DanGaming.Models
                 Price = price,
                 Quantity = quantity,
                 MinimumQuantity = 3,
-                DateOfRecipt = DateTime.Now.ToString("dd/MM/yyyy"),
+                DateOfRecipt = DateTime.Now,
                 CategoryId = categoryId,
                 SubcategoryId = subcategoryId
             };

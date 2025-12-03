@@ -17,6 +17,16 @@ namespace GettingReal_DanGaming.Models
 
         private void InitializeRepository()
         {
+            if (!File.Exists("categories.csv"))
+            {
+                SaveCategories();
+            }
+
+            if (!File.Exists("subcategories.csv"))
+            {
+                SaveSubcategories();
+            }
+
             try
             {
                 using (StreamReader reader = new StreamReader("categories.csv"))
