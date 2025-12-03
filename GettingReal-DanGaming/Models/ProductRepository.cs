@@ -36,7 +36,7 @@ namespace GettingReal_DanGaming.Models
                             Price = double.Parse(parts[4]),
                             Quantity = int.Parse(parts[5]),
                             MinimumQuantity = int.Parse(parts[6]),
-                            DateOfRecipt = parts[7],
+                            DateOfRecipt = DateTime.Parse(parts[7]),
                             CategoryId = int.Parse(parts[8]),
                             SubcategoryId = string.IsNullOrEmpty(parts[9]) ? null : int.Parse(parts[9])
                         };
