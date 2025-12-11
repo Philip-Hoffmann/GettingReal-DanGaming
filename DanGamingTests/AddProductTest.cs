@@ -1,5 +1,4 @@
-﻿
-using GettingReal_DanGaming.Models;
+﻿using GettingReal_DanGaming.Models;
 using GettingReal_DanGaming.ViewModels;
 
 namespace DanGamingTests
@@ -32,14 +31,13 @@ namespace DanGamingTests
 
             pvm = new ProductViewModel(product);
         }
-
         [TestCleanup]
         public void CleanUpAfterTest()
         {
             string fileName = "products.csv";
             File.Delete(fileName);
+            File.Create(fileName);
         }
-
         [TestMethod]
         public void CanAddProductToMainViewModel()
         {
@@ -58,15 +56,12 @@ namespace DanGamingTests
             Assert.AreEqual(pvm.Quantity, addedPvm.Quantity);
             Assert.AreEqual(pvm.CategoryId, addedPvm.CategoryId);
             Assert.AreEqual(pvm.SubcategoryId, addedPvm.SubcategoryId);
-
         }
-
         [TestMethod]
         public void IsAddedProductSavedToCSVFile()
         {
             //Act 
             mvm.AddProduct(pvm);
-
             
             string[] productLines = File.ReadAllLines("products.csv");
             string[] csvProduct = productLines.Single().Split(";");
