@@ -35,11 +35,10 @@ namespace DanGamingTests
         public void CleanUpAfterTest()
         {
             string fileName = "products.csv";
-            File.Delete(fileName);
             File.Create(fileName);
         }
         [TestMethod]
-        public void CanAddProductToMainViewModel()
+        public void CanAddProductToMainViewModelAndCVSFile()
         {
             //Act 
             mvm.AddProduct(pvm);
@@ -56,17 +55,11 @@ namespace DanGamingTests
             Assert.AreEqual(pvm.Quantity, addedPvm.Quantity);
             Assert.AreEqual(pvm.CategoryId, addedPvm.CategoryId);
             Assert.AreEqual(pvm.SubcategoryId, addedPvm.SubcategoryId);
-        }
-        [TestMethod]
-        public void IsAddedProductSavedToCSVFile()
-        {
-            //Act 
-            mvm.AddProduct(pvm);
             
             string[] productLines = File.ReadAllLines("products.csv");
             string[] csvProduct = productLines.Single().Split(";");
 
-            //Assert 
+            //Assert
             Assert.AreEqual("1", csvProduct[0]);
             Assert.AreEqual("ND75", csvProduct[1]);
             Assert.AreEqual("Super cool keyboard with cool screen.", csvProduct[2]);
