@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="categories.csv" />
     <None Remove="Images\DangamingLogo.png" />
     <None Remove="Images\LOGOSINGLE.png" />
   </ItemGroup>
